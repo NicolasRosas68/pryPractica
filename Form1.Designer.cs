@@ -123,6 +123,7 @@ namespace pryPractica
             this.button3.TabIndex = 12;
             this.button3.Text = "eliminar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -147,7 +148,7 @@ namespace pryPractica
             // 
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 348);
+            this.comboBox1.Location = new System.Drawing.Point(101, 350);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 9;

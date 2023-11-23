@@ -18,6 +18,7 @@ namespace pryPractica
         }
 
         DataTable dt = new DataTable(); 
+        
           
        
         private void Form1_Load(object sender, EventArgs e)
@@ -131,12 +132,11 @@ namespace pryPractica
             string sql = "select * from personas";
             Class1 personas = new Class1();
             dt = personas.personas(sql);
-            dataGridView1.Rows.Clear();
             foreach (DataRow fila in dt.Rows) 
             {
                 if (textBox1.Text == fila["idpersonas"].ToString())
                 {
-                    if (fila["sexo"].ToString() == "f" )
+                    if (fila["sexo"].ToString() == "m" )
                     {
                         radioButton1.Checked = true;
                         if (Convert.ToInt32(fila["trabaja"]) == 1) 
@@ -144,10 +144,21 @@ namespace pryPractica
                             checkBox1.Checked = true;
                             textBox1.Text = fila["idpersonas"].ToString();
                             textBox2.Text = fila["nombre"].ToString();
+                            dateTimePicker1.Value = Convert.ToDateTime(fila["nacio"]);
+                            comboBox1.SelectedValue = fila["idbarrio"].ToString();
                         }
+                        if (Convert.ToInt32(fila["trabaja"]) == 0)
+                        {
+                            checkBox1.Checked = false;
+                            textBox1.Text = fila["idpersonas"].ToString();
+                            textBox2.Text = fila["nombre"].ToString();
+                            dateTimePicker1.Value = Convert.ToDateTime(fila["nacio"]);
+                            comboBox1.SelectedValue = fila["idbarrio"].ToString();
+                        }
+
                     }
 
-                    if (fila["sexo"].ToString() == "m")
+                    if (fila["sexo"].ToString() == "f")
                     {
                         radioButton2.Checked = true;
                         if (Convert.ToInt32(fila["trabaja"]) == 1)
@@ -155,6 +166,17 @@ namespace pryPractica
                             checkBox1.Checked = true;    
                             textBox1.Text = fila["idpersonas"].ToString();
                             textBox2.Text = fila["nombre"].ToString();
+                            dateTimePicker1.Value = Convert.ToDateTime(fila["nacio"]);
+                            comboBox1.SelectedValue = fila["idbarrio"].ToString();
+
+                        }
+                        if (Convert.ToInt32(fila["trabaja"]) == 0)
+                        {
+                            checkBox1.Checked = false;
+                            textBox1.Text = fila["idpersonas"].ToString();
+                            textBox2.Text = fila["nombre"].ToString();
+                            dateTimePicker1.Value = Convert.ToDateTime(fila["nacio"]);
+                            comboBox1.SelectedValue = fila["idbarrio"].ToString();
 
                         }
                     }
@@ -162,6 +184,19 @@ namespace pryPractica
                
             }
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {  
+            int id = Convert.ToInt32(textBox1.Text);
+            string sql = $"DELETE FROM personas WHERE idpersonas = {id}";
+            Class1 personas = new Class1();
+            dt = personas.personas(sql);
+
+
+            textBox1.Clear();
+            textBox2.Clear();
+            
         }
     }
 }

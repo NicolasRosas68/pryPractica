@@ -25,14 +25,6 @@ namespace pryPractica
             return tabla;
         }
 
-        public DataTable barrios(string sql2)
-        {
-            cadena = "DataSource=personas.db";
-            adaptador = new SQLiteDataAdapter(sql2, cadena);
-            adaptador.Fill(tabla);
-            return tabla;
-
-        }
-       
+      
     }
 }
