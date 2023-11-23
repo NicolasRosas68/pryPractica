@@ -114,6 +114,7 @@ namespace pryPractica
             this.button4.TabIndex = 13;
             this.button4.Text = "modificar";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -143,6 +144,7 @@ namespace pryPractica
             this.button1.TabIndex = 10;
             this.button1.Text = "grabar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // comboBox1
             // 
@@ -193,7 +195,7 @@ namespace pryPractica
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(33, 122);
+            this.groupBox1.Location = new System.Drawing.Point(73, 119);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 100);
             this.groupBox1.TabIndex = 4;
